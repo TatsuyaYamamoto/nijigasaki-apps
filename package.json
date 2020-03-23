@@ -1,0 +1,16 @@
+{
+  "name": "nijigasaki-web-site",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/TatsuyaYamamoto/nijigasaki-web-site.git",
+  "author": "Tatsuya Yamamoto <yamamoto.tatsuya@fujixerox.co.jp>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "parcel src/index.html"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "sass": "^1.25.0"
+  }
+}

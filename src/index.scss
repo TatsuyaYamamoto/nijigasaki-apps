@@ -1,0 +1,421 @@
+$theme_color: #e9ffb7;
+$nijigasaki_pink: #e50280;
+$nijigasaki_orange: #f39801;
+
+@import "./sass/hamburger-button";
+@import "./sass/global-menu";
+@import "./sass/modal";
+@import "./sass/twitter-share-button";
+
+@font-face {
+  font-family: 'aoyagireisyosimo';
+  src: url(./assets/fonts/aoyagireisyosimo_ttf_2_01.ttf);
+}
+
+// https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
+$breakpoints: (
+        'sm': 'screen',
+        'md': 'screen and (min-width: 480px)',
+        'lg': 'screen and (min-width: 768px)',
+) !default;
+
+@mixin media-query($breakpoint: sm) {
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+
+.header {
+  width: 100%;
+  height: 150px;
+
+  background-color: $theme_color;
+}
+
+.hero {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  z-index: -5;
+
+  background-image: url(./assets/images/school_foreground.jpg);
+  background-position: center;
+
+  &__logo {
+    font-family: aoyagireisyosimo;
+
+    position: absolute;
+    top: 50px;
+    left: 100px;
+
+    z-index: 10;
+
+    a {
+      color: white;
+      text-decoration: none;
+      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+    }
+  }
+
+  &__school-slogan {
+    position: absolute;
+    top: 300px;
+    left: 0;
+    right: 0;
+
+    z-index: 10;
+
+    color: white;
+    font-size: 50px;
+    font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+    text-align: center;
+
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+  }
+}
+
+.hero-logo {
+  &__icon {
+    width: 50px;
+  }
+
+  &__name {
+    font-size: 30px;
+  }
+}
+
+
+.navigation-list {
+  &__item {
+    display: inline;
+  }
+}
+
+.wrapper {
+}
+
+.section {
+  margin: 100px 0;
+  overflow: hidden;
+
+  &__label {
+    display: inline-block;
+    font-size: 25px;
+
+    position: absolute;
+    top: -60px;
+    left: 10px;
+
+    z-index: 1;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 30px;
+    padding-right: 200px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    &::before {
+      transform: skewX(-25deg);
+      content: "";
+      position: absolute;
+      // ポジションで中央に配置
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: -1;
+      background: linear-gradient(
+                      90deg,
+                      #ffffff 0%, #ffffff 70%,
+                      #ececf2 70%, #ececf2 72%,
+                      #ffffff 72%, #ffffff 74%,
+                      #ececf2 74%, #ececf2 100%
+      );
+
+      border: solid 2px rgb(205, 205, 220);
+    }
+  }
+
+  &__container {
+    width: 100%;
+    margin: 100px 0;
+
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    background: linear-gradient(
+                    rgba(255, 255, 255, 0.0) 0%,
+                    rgba(255, 255, 255, 0.6) 8%,
+                    rgba(255, 255, 255, 0.6) 100%
+    );
+  }
+
+  &__contents-box {
+    position: relative;
+
+    max-width: 960px;
+    padding: 0 20px;
+    margin: 0 auto;
+  }
+}
+
+.news {
+  width: 100%;
+  min-height: 300px;
+
+  background-position: center;
+  background: linear-gradient(
+                  rgba(255, 255, 255, 1.0) 0%,
+                  rgba(255, 255, 255, 0.0) 30%,
+                  rgba(255, 255, 255, 0.0) 70%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ),
+  url("./assets/images/section_background_news.jpg");
+}
+
+.news-list {
+  margin-bottom: 50px;
+}
+
+.news-list-item {
+  border: solid 1px rgb(195, 195, 203);
+  box-shadow: 0 0 0 3px rgb(243, 243, 250) inset;
+
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 20px 50px;
+
+  &__upper {
+    display: flex;
+    margin-bottom: 20px;
+  }
+
+  &__lower {
+  }
+
+  &__label {
+    color: white;
+    width: 300px;
+    text-align: center;
+
+    &--operation {
+      background-color: rgb(81, 200, 50);
+    }
+
+    &--event {
+      background-color: rgb(252, 79, 81);
+    }
+
+    &--gacha {
+      background-color: rgb(247, 101, 6);
+    }
+
+    &--shop {
+      background-color: rgb(153, 63, 172);
+    }
+  }
+
+  &__date {
+    margin-left: 10px;
+  }
+
+  &__message {
+  }
+}
+
+.about-nijigaku {
+  width: 100%;
+  min-height: 300px;
+}
+
+.about-school {
+  width: 100%;
+  min-height: 500px;
+
+  background: linear-gradient(
+                  rgba(255, 255, 255, 1.0) 0%,
+                  rgba(255, 255, 255, 0.0) 30%,
+                  rgba(255, 255, 255, 0.0) 70%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ),
+  url("./assets/images/section_background_about_school.jpg");
+  background-position: center;
+
+}
+
+.school-life {
+  width: 100%;
+  min-height: 500px;
+
+  background-image: linear-gradient(
+                  rgba(255, 255, 255, 1.0) 0%,
+                  rgba(255, 255, 255, 0.0) 30%,
+                  rgba(255, 255, 255, 0.0) 70%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ), url("./assets/images/section_background_school_life.jpg");
+  background-position: center;
+}
+
+.examination {
+  width: 100%;
+  min-height: 500px;
+
+  background: linear-gradient(
+                  rgba(255, 255, 255, 1.0) 0%,
+                  rgba(255, 255, 255, 0.0) 30%,
+                  rgba(255, 255, 255, 0.0) 70%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ), url("./assets/images/section_background_examination.jpg");
+  background-position: center;
+}
+
+.special {
+  width: 100%;
+  min-height: 500px;
+
+  background: linear-gradient(
+                  rgba(255, 255, 255, 1.0) 0%,
+                  rgba(255, 255, 255, 0.0) 30%,
+                  rgba(255, 255, 255, 0.0) 70%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ), url("./assets/images/section_background_special.jpg");
+  background-position: center;
+}
+
+.menu-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+
+  margin-bottom: 50px;
+}
+
+.menu-item {
+  width: 200px;
+  font-size: 0;
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(1.01);
+  }
+
+  &__thumbnail {
+    width: 100%;
+  }
+
+  &__label {
+    font-size: 15px;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    background: linear-gradient(
+                    90deg,
+                    rgb(254, 174, 2),
+                    rgb(255, 106, 215),
+                    rgb(64, 183, 251)
+    );
+  }
+}
+
+.triangle {
+  height: 200px;
+  width: 100%;
+  position: absolute;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+
+    border-top: 200px solid $nijigasaki_pink;
+    border-left: 100px solid $nijigasaki_pink;
+    border-right: 200px solid transparent;
+    border-bottom: 0 solid transparent;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+
+    border-top: 200px solid $nijigasaki_orange;
+    border-right: 100px solid $nijigasaki_orange;
+    border-left: 200px solid transparent;
+    border-bottom: 0 solid transparent;
+  }
+}
+
+
+.special-contents-card-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.special-contents-card {
+  width: 250px;
+  display: block;
+
+  border: 1px solid #dfe1e5;
+  border-radius: 8px;
+
+  &__thumbnail {
+    width: 200px;
+  }
+
+  &__title {
+  }
+}
+
+.footer {
+  width: 100%;
+  padding-bottom: 30px;
+
+  background-color: $theme_color;
+
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.footer-school-info {
+  display: flex;
+  align-items: center;
+
+  &__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  &__address {
+  }
+}
+
+.more-button {
+  display: block;
+
+  margin: 0 auto;
+  padding: 10px 0;
+  width: 300px;
+
+  text-decoration: inherit;
+  color: white;
+  text-align: center;
+
+  background: linear-gradient(
+                  135deg,
+                  #ff96a2 0%, #ff96a2 10%,
+                  #fb8391 10%, #fb8391 100%
+  );
+  border: solid 1px rgb(205, 205, 220);
+
+  transition: 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
+  }
+}
+
+.nowrap-text {
+  display: inline-block;
+}
