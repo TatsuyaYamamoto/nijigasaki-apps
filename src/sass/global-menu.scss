@@ -102,7 +102,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(0, 0, 0, 0.1)
+  background: rgba(239, 147, 3, 0.4)
 }
 
 .global-menu {
@@ -127,15 +127,16 @@
     z-index: 10;
     transition: 0.2s;
 
-    &::after {
+    &::before {
       content: "";
       position: absolute;
       z-index: -1;
     }
 
-    &:hover {
-      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
-      transform: scale(1.01);
+    &::after {
+      content: "";
+      position: absolute;
+      z-index: -4;
     }
   }
 
@@ -157,6 +158,16 @@
                     50% 100%
     );
 
+    &:before {
+      top: 5px;
+      left: 30px;
+
+      content: "\f4d7";
+      font-size: 25px;
+      font-family: FontAwesome;
+      color: #ffffff;
+    }
+
     &:after {
       width: 200px;
       height: 100px;
@@ -165,10 +176,10 @@
       top: 0;
       left: 0;
       clip-path: polygon(
-                      0% + $gap-length 0% + $gap-length,
+                      45% 5%,
                       100% - $gap-length 0% + $gap-length,
                       50% 100% - $gap-length,
-                      50% 100% - $gap-length,
+                      25% 45%
       );
     }
 
@@ -180,20 +191,33 @@
 
   &:nth-child(2) {
     @include item-base();
-    $color: #b2ce54;
     $gap-length: 5%;
 
     width: 200px;
     height: 100px;
 
-    color: $color;
-    background-color: $color;
+    color: #66b18c;
+    background: linear-gradient(
+                    45deg,
+                    rgb(179, 231, 132) 0%,
+                    rgb(205, 229, 77) 100%
+    );
     clip-path: polygon(
                     50% 0%,
                     50% 0%,
                     100% 100%,
                     0% 100%
     );
+
+    &:before {
+      top: 65px;
+      left: 130px;
+
+      content: "\f2bb";
+      font-size: 30px;
+      font-family: FontAwesome;
+      color: #ffffff
+    }
 
     &:after {
       width: 200px;
@@ -205,8 +229,8 @@
 
       clip-path: polygon(
                       50% 0% + $gap-length,
-                      50% 0% + $gap-length,
-                      100% - $gap-length 100% - $gap-length,
+                      73% 51%,
+                      50% 100% - $gap-length,
                       0% + $gap-length 100% - $gap-length
       );
     }
@@ -223,7 +247,7 @@
 
     width: 200px;
     height: 100px;
-    color: $color;
+    color: #ffffff;
 
     background-color: $color;
     clip-path: polygon(
@@ -233,6 +257,16 @@
                     50% 100%
     );
 
+    &:before {
+      top: 5px;
+      left: 40px;
+
+      content: "\f2bb";
+      font-size: 30px;
+      font-family: FontAwesome;
+      color: $color
+    }
+
     &:after {
       width: 200px;
       height: 100px;
@@ -241,19 +275,20 @@
       top: 0;
       left: 0;
       clip-path: polygon(
-                      0% + $gap-length 0% + $gap-length,
-                      100% - $gap-length 0% + $gap-length,
-                      50% 100% - $gap-length,
-                      50% 100% - $gap-length
+                      1% 1%,
+                      60% 1%,
+                      30% 60%,
+                      30% 60%
       );
     }
 
     * {
-      transform: translateY(-120%) translateX(-50%);
+      transform: translateY(-120%) translateX(-30%);
     }
   }
 
   &:nth-child(4) {
+    @include item-base();
     $color: #8b90ea;
     position: absolute;
 
@@ -267,13 +302,20 @@
     transform: rotate(-135deg);
 
     background-color: white;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+
+    &:before {
+      top: 15px;
+      left: 30px;
+
+      content: "\f599";
+      font-size: 35px;
+      font-family: FontAwesome;
+      color: #ffffff;
+
+      transform: rotate(135deg);
+    }
 
     &:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-
       top: 5px;
       left: 5px;
 
@@ -293,6 +335,7 @@
   }
 
   &:nth-child(5) {
+    @include item-base();
     $color: #ffff;
 
     position: absolute;
@@ -307,13 +350,8 @@
     transform: rotate(-45deg);
 
     background-color: white;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
 
     &:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-
       top: 6px;
       left: 7px;
 
@@ -333,6 +371,8 @@
   }
 
   &:nth-child(6) {
+    @include item-base();
+
     position: absolute;
 
     //width: 150px;
@@ -350,13 +390,20 @@
     transform: rotate(-45deg);
 
     background-color: white;
-    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+
+    &:before {
+      top: 100px;
+      left: 20px;
+
+      content: "\f15c";
+      font-size: 35px;
+      font-family: FontAwesome;
+      color: #c583e3;
+
+      transform: rotate(45deg);
+    }
 
     &:after {
-      content: "";
-      position: absolute;
-      z-index: -1;
-
       top: 2px;
       left: 2px;
 
