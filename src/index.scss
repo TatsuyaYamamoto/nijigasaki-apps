@@ -2,11 +2,6 @@ $theme_color: #e9ffb7;
 $nijigasaki_pink: #e50280;
 $nijigasaki_orange: #f39801;
 
-@import "./sass/hamburger-button";
-@import "./sass/global-menu";
-@import "./sass/modal";
-@import "./sass/twitter-share-button";
-
 @font-face {
   font-family: 'aoyagireisyosimo';
   src: url(./assets/fonts/aoyagireisyosimo_ttf_2_01.ttf);
@@ -20,9 +15,9 @@ $nijigasaki_orange: #f39801;
 
 // https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
 $breakpoints: (
-        'sm': 'screen',
-        'md': 'screen and (min-width: 480px)',
-        'lg': 'screen and (min-width: 768px)',
+        'sm': 'screen and (max-width: 559px)',
+        'md': 'screen and (max-width: 959px)',
+        'lg': 'screen',
 ) !default;
 
 @mixin media-query($breakpoint: sm) {
@@ -30,6 +25,11 @@ $breakpoints: (
     @content;
   }
 }
+
+@import "./sass/hamburger-button";
+@import "./sass/global-menu";
+@import "./sass/modal";
+@import "./sass/twitter-share-button";
 
 body {
   font-family: "ロゴたいぷゴシック-コンデンスド"
@@ -56,14 +56,13 @@ body {
 
     position: absolute;
     top: 50px;
-    left: 100px;
+    left: 50px;
 
     z-index: 10;
 
-    a {
-      color: white;
-      text-decoration: none;
-      filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+    @include media-query($breakpoint: "sm") {
+      top: 20px;
+      left: 20px;
     }
   }
 
@@ -81,16 +80,45 @@ body {
     text-align: center;
 
     filter: drop-shadow(4px 2px 2px rgba(0, 0, 0, 0.6));
+
+    @include media-query($breakpoint: "sm") {
+      font-size: 35px;
+    }
   }
 }
 
 .hero-logo {
+  color: white;
+  text-decoration: none;
+  filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.6));
+
+  display: flex;
+  align-items: center;
+
   &__icon {
-    width: 50px;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background-image: url("./assets/images/logo.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 
   &__name {
-    font-size: 30px;
+    font-size: 50px;
+    margin-left: 10px;
+  }
+
+  @include media-query($breakpoint: "sm") {
+    &__icon {
+      width: 56px;
+      height: 56px;
+    }
+
+    &__name {
+      font-size: 35px;
+    }
   }
 }
 
