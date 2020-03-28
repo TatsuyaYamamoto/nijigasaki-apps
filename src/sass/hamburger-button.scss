@@ -47,8 +47,8 @@
   }
 
   @include media-query($breakpoint: "sm") {
-    right: 30px;
-    top: 30px;
+    right: 20px;
+    top: 20px;
 
     width: $side-length * $small-scale;
     height: $side-length * $small-scale;
