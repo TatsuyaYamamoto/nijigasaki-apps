@@ -36,21 +36,26 @@ body {
   font-family: "ロゴたいぷゴシック-コンデンスド"
 }
 
-.header {
-  width: 100%;
-  height: 150px;
-
-  background-color: $theme_color;
+.wrapper {
 }
 
 .hero {
-  width: 100%;
-  height: 100vh;
   position: relative;
-  z-index: -5;
+  top: 0;
 
-  background-image: url(./assets/images/school_foreground.jpg);
+  width: 100%;
+  height: 111vh;
+  z-index: 0;
+
+  background: linear-gradient(
+                  rgba(255, 255, 255, 0.0) 0%,
+                  rgba(255, 255, 255, 0.0) 90%,
+                  rgba(255, 255, 255, 1.0) 100%
+  ),
+  url(./assets/images/school_foreground.jpg);
+  background-blend-mode: multiply;
   background-position: center;
+  background-size: cover;
 
   &__logo {
     position: absolute;
@@ -90,18 +95,39 @@ body {
   }
 }
 
-.navigation-list {
-  &__item {
-    display: inline;
+.section-list {
+  position: relative;
+
+  &__background {
+    position: fixed;
+    top: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    z-index: -100;
+  }
+
+  &__background-image {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    height: 100%;
+
+    opacity: 0;
+    transition: opacity 1s;
+
+    &--show {
+      opacity: 1;
+    }
   }
 }
 
-.wrapper {
-}
-
 .section {
-  margin: 100px 0;
   overflow: hidden;
+  padding: 50px 0;
 
   &__label {
     display: inline-block;
@@ -150,8 +176,8 @@ body {
 
     background: linear-gradient(
                     rgba(255, 255, 255, 0.0) 0%,
-                    rgba(255, 255, 255, 0.6) 8%,
-                    rgba(255, 255, 255, 0.6) 100%
+                    rgba(255, 255, 255, 0.8) 8%,
+                    rgba(255, 255, 255, 0.8) 100%
     );
   }
 
@@ -167,15 +193,6 @@ body {
 .news {
   width: 100%;
   min-height: 300px;
-
-  background-position: center;
-  background: linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 30%,
-                  rgba(255, 255, 255, 0.0) 70%,
-                  rgba(255, 255, 255, 1.0) 100%
-  ),
-  url("./assets/images/section_background_news.jpg");
 }
 
 .news-list {
@@ -237,54 +254,28 @@ body {
   width: 100%;
   min-height: 500px;
 
-  background: linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 30%,
-                  rgba(255, 255, 255, 0.0) 70%,
-                  rgba(255, 255, 255, 1.0) 100%
-  ),
-  url("./assets/images/section_background_about_school.jpg");
-  background-position: center;
-
+  //background-image: url("./assets/images/section_background_about_school.jpg");
 }
 
 .school-life {
   width: 100%;
   min-height: 500px;
 
-  background-image: linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 30%,
-                  rgba(255, 255, 255, 0.0) 70%,
-                  rgba(255, 255, 255, 1.0) 100%
-  ), url("./assets/images/section_background_school_life.jpg");
-  background-position: center;
+  //background-image: url("./assets/images/section_background_school_life.jpg");
 }
 
 .examination {
   width: 100%;
   min-height: 500px;
 
-  background: linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 30%,
-                  rgba(255, 255, 255, 0.0) 70%,
-                  rgba(255, 255, 255, 1.0) 100%
-  ), url("./assets/images/section_background_examination.jpg");
-  background-position: center;
+  //background-image: url("./assets/images/section_background_examination.jpg");
 }
 
 .special {
   width: 100%;
   min-height: 500px;
 
-  background: linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 30%,
-                  rgba(255, 255, 255, 0.0) 70%,
-                  rgba(255, 255, 255, 1.0) 100%
-  ), url("./assets/images/section_background_special.jpg");
-  background-position: center;
+  //background-image: url("./assets/images/section_background_special.jpg");
 }
 
 .menu-list {
@@ -373,23 +364,24 @@ body {
 }
 
 .footer {
-  width: 100%;
-  min-height: 400px;
-  background: $theme_color linear-gradient(
-                  rgba(255, 255, 255, 1.0) 0%,
-                  rgba(255, 255, 255, 0.0) 75%
+  position: relative;
+
+  background: linear-gradient(
+                  45deg,
+                  rgb(229, 0, 203) 10%,
+                  rgb(235, 158, 0) 90%
   );
 
-  // http://shanabrian.com/web/html-css-js-technics/css-over-margin.php
-  overflow: hidden;
+  width: 100%;
+  padding: 50px 0;
+
 
   &__school-info {
-    margin-top: 300px;
     text-align: center;
   }
 
   &__copyright {
-    margin: 50px 0;
+    margin-top: 30px;
 
     text-align: center;
   }
