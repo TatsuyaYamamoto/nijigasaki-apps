@@ -1,7 +1,13 @@
 .dialog-character {
 
+  img {
+    max-width: 200px;
+    width: 100%;
+  }
+
   &--move {
     animation: shake 600ms 0.2s;
+    transform-origin: center;
 
     @keyframes shake {
       0% {
