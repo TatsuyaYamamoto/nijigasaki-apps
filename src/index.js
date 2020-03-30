@@ -43,6 +43,23 @@ function initSectionObserver() {
   });
 }
 
+const handleDialog = () => {
+  const modalElement = document.getElementById("modal");
+  const dialogCharacterElement = document.getElementById("dialog-character");
+
+  if (modalElement.classList.contains("modal-wrapper--show")) {
+    modalElement.classList.remove("modal-wrapper--show")
+  } else {
+    modalElement.classList.add("modal-wrapper--show");
+
+    dialogCharacterElement.classList.add("dialog-character--move");
+    setTimeout(() => {
+      dialogCharacterElement.classList.remove("dialog-character--move");
+    }, 1000);
+  }
+};
+
 (() => {
   initSectionObserver();
+  window.handleDialog = handleDialog;
 })();
