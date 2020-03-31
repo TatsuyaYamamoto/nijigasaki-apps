@@ -45,7 +45,7 @@ body {
                   rgba(255, 255, 255, 0.0) 90%,
                   rgba(255, 255, 255, 1.0) 100%
   ),
-  url(./assets/images/school_foreground.jpg);
+  url(./assets/images.min/school_foreground.jpg);
   background-blend-mode: multiply;
   background-position: center;
   background-size: cover;
@@ -246,29 +246,21 @@ body {
 .about-school {
   width: 100%;
   min-height: 500px;
-
-  //background-image: url("./assets/images/section_background_about_school.jpg");
 }
 
 .school-life {
   width: 100%;
   min-height: 500px;
-
-  //background-image: url("./assets/images/section_background_school_life.jpg");
 }
 
 .examination {
   width: 100%;
   min-height: 500px;
-
-  //background-image: url("./assets/images/section_background_examination.jpg");
 }
 
 .special {
   width: 100%;
   min-height: 500px;
-
-  //background-image: url("./assets/images/section_background_special.jpg");
 }
 
 .menu-list {
