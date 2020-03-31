@@ -2,16 +2,6 @@ $theme_color: #e9ffb7;
 $nijigasaki_pink: #e50280;
 $nijigasaki_orange: #f39801;
 
-@font-face {
-  font-family: 'aoyagireisyosimo';
-  src: url(./assets/fonts/aoyagireisyosimo_ttf_2_01.ttf);
-}
-
-@font-face {
-  font-family: "ロゴたいぷゴシック-コンデンスド" ;
-  src: url('https://cdn.leafscape.be/LogoTypeGothicCondense/07LogoTypeGothic-Condense_web.woff2') format("woff2");
-}
-
 
 // https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
 $breakpoints: (
@@ -26,6 +16,8 @@ $breakpoints: (
   }
 }
 
+@import "./assets/fonts/aoyagireisyosimo_ttf_2_01";
+@import "./assets/fonts/LogoTypeGothic-Condense";
 @import "./sass/hamburger-button";
 @import "./sass/global-menu";
 @import "./sass/modal";

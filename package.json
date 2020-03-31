@@ -17,6 +17,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
+    "fontmin": "^0.9.8",
+    "html-to-text": "^5.1.1",
     "parcel-bundler": "^1.12.4",
     "postcss-modules": "^1.5.0",
     "sass": "^1.25.0"

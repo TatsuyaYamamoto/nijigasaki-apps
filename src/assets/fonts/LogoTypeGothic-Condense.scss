@@ -1,0 +1,8 @@
+/**
+ * @link http://www.fontna.com/blog/1345/
+ * $ yarn fontmin -t "$(cat src/index.html | yarn html-to-text --ignoreHref --ignoreImage | tr -d '\n')" src/assets/fonts/LogoTypeGothic-Condense.ttf  > src/assets/fonts/LogoTypeGothic-Condense.min.ttf
+ */
+@font-face {
+  font-family: "ロゴたいぷゴシック-コンデンスド" ;
+  src: url(assets/fonts/LogoTypeGothic-Condense.min.ttf);
+}
