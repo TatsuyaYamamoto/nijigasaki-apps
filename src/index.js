@@ -74,6 +74,10 @@ const handleDialog = () => {
   }
 };
 
+window.onerror = function () {
+  alert(`想定外のエラーが出ちゃいました...。突貫工事のお叱りは @T28_tatsuyaまで....。`)
+};
+
 (() => {
   initSectionObserver();
   window.handleDialog = handleDialog;
