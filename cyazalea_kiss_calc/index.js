@@ -4,6 +4,14 @@ window.onerror = function () {
   alert(`想定外のエラーが出ちゃいました...。突貫工事のお叱りは @T28_tatsuyaまで....。`)
 };
 
+const showExplosion = () => {
+  const explosionElement = document.getElementById("explosion");
+  explosionElement.classList.add("explosion--show");
+  setTimeout(() => {
+    explosionElement.classList.remove("explosion--show");
+  }, 1000)
+};
+
 (() => {
   // operator
   const calcButtonAdd = document.getElementById("calc-button-add");
@@ -132,6 +140,7 @@ window.onerror = function () {
   const onClickEqual = () => {
     if (isCyazaleaKissPowerCharged()) {
       calculatorElements = ["9000000000000000"];
+      showExplosion();
     }
 
 
