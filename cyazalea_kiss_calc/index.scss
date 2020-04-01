@@ -130,3 +130,130 @@ body {
   margin-top: 5px;
   text-decoration: none;
 }
+
+.cheer {
+  display: inline-block;
+  background-color: deepskyblue;
+  color: white;
+  padding: 3px 10px;
+  border: double 3px white;
+  border-radius: 5px;
+  box-shadow: 0px 3px 5px 2px rgba(0, 0, 0, 0.7);
+  margin-top: 5px;
+  text-decoration: none;
+  background: linear-gradient(
+                  135deg,
+                  rgb(213, 91, 57) 10%,
+                  rgb(218, 163, 154) 20%,
+                  rgb(78, 225, 224) 30%,
+                  rgb(216, 63, 48) 40%,
+                  rgb(80, 226, 231) 50%,
+                  rgb(218, 181, 82) 60%,
+                  rgb(215, 180, 140) 70%,
+                  rgb(156, 110, 160) 80%,
+                  rgb(210, 68, 55) 90%
+  );
+}
+
+.info-button {
+  // https://icooon-mono.com/00021-%E3%82%A4%E3%83%B3%E3%83%95%E3%82%A9%E3%83%A1%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%83%9C%E3%82%BF%E3%83%B3%E3%81%AE%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3/
+  background-image: url(assets/images/info.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 50px;
+  height: 50px;
+
+  cursor: pointer;
+}
+
+.modal-wrapper {
+  z-index: 999;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 60px 10px;
+  text-align: center;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .3s, visibility .3s;
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity .4s, visibility .4s;
+  }
+}
+
+.modal-overlay {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5)
+}
+
+.modal-window {
+  box-sizing: border-box;
+  display: inline-block;
+  z-index: 20;
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  padding: 30px 30px 15px;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, .6);
+  vertical-align: middle;
+
+  &__label {
+    background: #f5f5ff;
+    padding: 10px 0;
+
+    &::before {
+    }
+
+    &::after {
+    }
+  }
+
+  &__body {
+    margin: 20px auto;
+  }
+
+  &__action {
+  }
+}
+
+.modal-window-action-button {
+  display: block;
+
+  margin: 0 auto;
+  padding: 10px 0;
+  max-width: 300px;
+
+  text-decoration: inherit;
+  color: white;
+  text-align: center;
+
+  background-color: black;
+  border: solid 1px rgb(205, 205, 220);
+}
+
+.modal-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nowrap-text {
+  display: inline-block;
+}

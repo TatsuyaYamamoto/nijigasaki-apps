@@ -12,6 +12,16 @@ const showExplosion = () => {
   }, 1000)
 };
 
+const handleDialog = () => {
+  const modalElement = document.getElementById("modal");
+
+  if (modalElement.classList.contains("modal-wrapper--show")) {
+    modalElement.classList.remove("modal-wrapper--show")
+  } else {
+    modalElement.classList.add("modal-wrapper--show");
+  }
+};
+
 (() => {
   // operator
   const calcButtonAdd = document.getElementById("calc-button-add");
@@ -219,4 +229,5 @@ const showExplosion = () => {
 
 
   render();
+  window.handleDialog = handleDialog;
 })();
