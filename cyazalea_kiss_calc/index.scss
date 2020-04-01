@@ -1,3 +1,5 @@
+$button-size: 50px;
+
 // https://hashimotosan.hatenablog.jp/entry/2019/05/28/164834
 $breakpoints: (
         'sm': 'screen and (max-width: 559px)',
@@ -49,28 +51,39 @@ body {
 .calculator {
   background-color: white;
   border: solid 1px black;
+  min-width: 300px;
 
   .calculator-window {
-    width: 300px;
-    height: 100px;
+    width: 100%;
   }
 
   .calculator-display {
+    margin: 20px;
+    padding: 20px 5px;
+    font-size: 20px;
+    background-color: #cedfe5;
+    color: black;
     border: solid 1px black;
     text-align: right;
   }
 
   .calculator-button-row {
     display: flex;
+    justify-content: center;
 
     .calculator-button {
       width: 50px;
       height: 50px;
-      margin: 10px;
+      margin: 5px;
 
       border: solid 1px black;
+      box-sizing: border-box;
 
       cursor: pointer;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
       &__label {
       }
