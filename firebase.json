@@ -8,6 +8,15 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },
+    {
+      "target": "pro",
+      "public": "dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }
   ]
 }
