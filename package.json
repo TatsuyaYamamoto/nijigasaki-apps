@@ -15,7 +15,9 @@
     "build-pro": "yarn clean && parcel build src/index.html && yarn copy-ogp",
     "deploy-dev": "firebase deploy --only hosting:dev --project nijigasaki-school",
     "deploy-pro": "firebase deploy --only hosting:pro --project nijigasaki-school",
-    "start:calc": "parcel cyazalea_kiss_calc/index.html"
+    "start:calc": "parcel cyazalea_kiss_calc/index.html",
+    "build:calc": "rm -rf dist_calc && parcel build cyazalea_kiss_calc/index.html --out-dir dist_calc && cp cyazalea_kiss_calc/assets/images/ogp.jpg dist_calc",
+    "deploy:calc": "firebase deploy --only hosting:calc --project nijigasaki-school"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",

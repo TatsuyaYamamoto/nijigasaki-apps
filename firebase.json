@@ -17,6 +17,15 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },
+    {
+      "target": "calc",
+      "public": "dist_calc",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }
   ]
 }

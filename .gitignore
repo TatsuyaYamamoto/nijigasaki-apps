@@ -1,4 +1,5 @@
 src/assets
+dist*/
 
 
 # Created by https://www.gitignore.io/api/node,sass,macos,firebase,intellij+all
