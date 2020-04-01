@@ -14,7 +14,8 @@
     "build-dev": "yarn clean && parcel build src/index.html && yarn copy-ogp && yarn replace-dev-meta",
     "build-pro": "yarn clean && parcel build src/index.html && yarn copy-ogp",
     "deploy-dev": "firebase deploy --only hosting:dev --project nijigasaki-school",
-    "deploy-pro": "firebase deploy --only hosting:pro --project nijigasaki-school"
+    "deploy-pro": "firebase deploy --only hosting:pro --project nijigasaki-school",
+    "start:calc": "parcel cyazalea_kiss_calc/index.html"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
