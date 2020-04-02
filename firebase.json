@@ -2,7 +2,7 @@
   "hosting": [
     {
       "target": "dev",
-      "public": "dist",
+      "public": "dist/nijigasaki_website",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -11,7 +11,7 @@
     },
     {
       "target": "pro",
-      "public": "dist",
+      "public": "dist/nijigasaki_website",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -20,7 +20,7 @@
     },
     {
       "target": "calc",
-      "public": "dist_calc",
+      "public": "dist/cyazalea_kiss_calc",
       "ignore": [
         "firebase.json",
         "**/.*",
