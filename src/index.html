@@ -62,7 +62,7 @@
   <meta property="og:description" content="東京・お台場にある、虹ヶ咲学園のウェブサイトです。自由な校風と多様な専攻が魅力の虹ヶ咲学園の情報を、四月馬鹿の範囲でご覧頂けます。"/>
   <meta name="twitter:card" content="summary_large_image"/>
 
-  <meta name="google-site-verification" content="ZI8HRwedxfaoQEKBuR4DaxMANvqSGHS1pOlFLIu8y_Y" />
+  <meta name="google-site-verification" content="ZI8HRwedxfaoQEKBuR4DaxMANvqSGHS1pOlFLIu8y_Y"/>
 </head>
 <body>
 <div class="loading">
@@ -270,7 +270,8 @@
             <a href="#!" class="modal-link" onclick="handleDialog()">
               <div class="menu-item">
                 <div class="menu-item__thumbnail">
-                  <img src="./assets/images.min/section_item_school_life_uniform.png" class="menu-item__thumbnail-inner">
+                  <img src="./assets/images.min/section_item_school_life_uniform.png"
+                       class="menu-item__thumbnail-inner">
                 </div>
                 <div class="menu-item__label">
                   <span class="menu-item__title">制服</span>
@@ -487,8 +488,28 @@
   <a href="#!" class="modal-overlay" onclick="handleDialog()"></a>
   <div class="modal-window">
     <div class="modal-window__label">
-      <span class="nowrap-text">今日は</span>
-      <span class="nowrap-text">エイプリルフールです！</span>
+      <span class="nowrap-text">
+        <script>
+          const aprilFool2020 = new Date(2020, 4 - 1, 1, 0, 0, 0);
+          const today = new Date();
+          const diffMs = new Date(today.getTime() - aprilFool2020.getTime()).getTime();
+          const diffDate = Math.floor(diffMs / (1000 * 60 * 60 * 24)) % 365;
+          if (diffDate === 0) {
+            document.write("今日は");
+          } else {
+            document.write(String(diffDate) + "日前は");
+          }
+        </script>
+      </span>
+      <span class="nowrap-text">
+        <script>
+          if (diffDate === 0) {
+            document.write("エイプリルフールです！");
+          } else {
+            document.write("エイプリルフールでした！");
+          }
+        </script>
+      </span>
     </div>
     <div class="modal-window__body">
       <div>このウェブサイトはエイプリルフールのためにラブライバーが作成したジョークサイトです。</div>

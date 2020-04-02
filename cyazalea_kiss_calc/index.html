@@ -138,8 +138,28 @@
   <a href="#!" class="modal-overlay" onclick="handleDialog()"></a>
   <div class="modal-window">
     <div class="modal-window__label">
-      <span class="nowrap-text">今日は</span>
-      <span class="nowrap-text">エイプリルフールです！</span>
+      <span class="nowrap-text">
+        <script>
+          const aprilFool2020 = new Date(2020, 4 - 1, 1, 0, 0, 0);
+          const today = new Date();
+          const diffMs = new Date(today.getTime() - aprilFool2020.getTime()).getTime();
+          const diffDate = Math.floor(diffMs / (1000 * 60 * 60 * 24)) % 365;
+          if (diffDate === 0) {
+            document.write("今日は");
+          } else {
+            document.write(String(diffDate) + "日前は");
+          }
+        </script>
+      </span>
+      <span class="nowrap-text">
+        <script>
+          if (diffDate === 0) {
+            document.write("エイプリルフールです！");
+          } else {
+            document.write("エイプリルフールでした！");
+          }
+        </script>
+      </span>
     </div>
     <div class="modal-window__body">
       <div>このウェブサイトはラブライバーがダダンダーンってつくったけーさんアプリだよ！</div>
