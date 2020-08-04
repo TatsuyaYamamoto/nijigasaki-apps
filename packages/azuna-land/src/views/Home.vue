@@ -1,17 +1,34 @@
 <template>
   <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
+    <v-joke-confirm-dialog>
+      <template v-slot:default="slotProps">
+        <v-btn
+          color="primary"
+          dark
+          fab
+          v-bind="slotProps.attrs"
+          v-on="slotProps.on"
+        >
+          <v-icon>mdi-menu</v-icon>
+        </v-btn>
+      </template>
+    </v-joke-confirm-dialog>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
+import { VBtn, VIcon } from "vuetify/lib";
 
 export default {
   name: "Home",
   components: {
-    HelloWorld
+    VJokeConfirmDialog,
+    VBtn,
+    VIcon
+  },
+  data: function() {
+    return {};
   }
 };
 </script>
