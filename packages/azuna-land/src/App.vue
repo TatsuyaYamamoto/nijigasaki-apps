@@ -1,8 +1,8 @@
 <template>
   <transition name="fade">
-    <div v-if="show" id="app">
+    <v-app v-if="show">
       <router-view />
-    </div>
+    </v-app>
   </transition>
 </template>
 
@@ -31,14 +31,6 @@ export default Vue.extend({
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
