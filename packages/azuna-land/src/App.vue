@@ -1,12 +1,34 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+  <transition name="fade">
+    <div v-if="show" id="app">
+      <router-view />
     </div>
-    <router-view />
-  </div>
+  </transition>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  data: function() {
+    return {
+      show: false
+    };
+  },
+  mounted() {
+    const minFirstRenderTime = 500;
+    const loadingElement = document.getElementById("loading");
+
+    setTimeout(() => {
+      this.show = true;
+
+      if (loadingElement) {
+        loadingElement.remove();
+      }
+    }, minFirstRenderTime);
+  }
+});
+</script>
 
 <style lang="scss">
 #app {
@@ -17,16 +39,12 @@
   color: #2c3e50;
 }
 
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
 </style>
