@@ -9,11 +9,11 @@
     />
 
     <div class="kanransha">
-      <div class="kanransha__base">
-        <img src="../assets/images/azuna-land_kanransha_back.png" />
-      </div>
       <div class="kanransha__wheel">
-        <img src="../assets/images/azuna-land_kanransha_front.png" />
+        <img
+          class="kanransha__wheel-image"
+          src="../assets/images/azuna-land_kanransha_front.png"
+        />
         <div
           v-for="(imageUrl, i) in [
             require('../assets/images/azuna-land_kanransha_red.png'),
@@ -28,14 +28,12 @@
           :key="i"
           :class="['kanransha__gondola', `kanransha-gondola__${i}`]"
         >
-          <img :src="imageUrl" />
+          <img class="kanransha__gondola-image" :src="imageUrl" />
         </div>
       </div>
     </div>
 
-    <div class="theater">
-      <img src="../assets/images/azuna_land_theater.png" />
-    </div>
+    <img class="theater" src="../assets/images/azuna_land_theater.png" />
   </div>
 </template>
 
@@ -57,19 +55,27 @@ export default Vue.extend({});
   display: inline-block;
   transform: scale(0.7);
 
-  &__base {
-    position: absolute;
-    left: -10%;
-    display: block;
-  }
+  width: 50%;
+  padding-top: calc((514 / 490) * 50%);
+
+  background-image: url("../assets/images/azuna-land_kanransha_back.png");
+  background-size: contain;
+
   &__wheel {
     position: absolute;
+    top: -10%;
+    left: -1%;
+    width: 100%;
 
     animation-name: wheel-spin;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 30s;
   }
+  &__wheel-image {
+    width: 100%;
+  }
+
   &__gondola {
     position: absolute;
 
@@ -77,6 +83,11 @@ export default Vue.extend({});
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 30s;
+
+    width: 20%;
+  }
+  &__gondola-image {
+    width: 100%;
   }
 
   .kanransha-gondola {
@@ -137,6 +148,8 @@ export default Vue.extend({});
   position: absolute;
   top: 50%;
   left: 0%;
+
+  width: 30%;
 }
 
 .corster {
