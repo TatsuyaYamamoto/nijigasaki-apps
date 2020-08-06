@@ -1,7 +1,13 @@
 <template>
   <div class="map">
     <v-img src="../assets/images/azuna_land_back.png"></v-img>
-    <img class="hikousen" src="../assets/images/azuna_land_hikousen.png" />
+    <div class="hikousen">
+      <img
+        class="hikousen-inner"
+        src="../assets/images/azuna_land_hikousen.png"
+      />
+    </div>
+
     <img class="corster" src="../assets/images/azuna_land_corster.png" />
     <img
       class="horrorhouse"
@@ -170,29 +176,46 @@ export default Vue.extend({});
 }
 
 .hikousen {
+  $width: 30%;
   position: absolute;
-  top: 60px;
-  left: 50px;
-  width: 50%;
-  animation: 8s linear 0 move;
+  top: 20%;
+  left: 0%;
+  width: $width;
+  animation: 30s linear 0 move;
   animation-iteration-count: infinite;
 
   @keyframes move {
     0%,
     100% {
-      transform: translate(0, 0);
+      transform: translate(-100%, 0);
     }
-    48% {
-      transform: translate(200%, 0);
+    90% {
+      transform: translate($width * 12, 0);
     }
-    49% {
-      transform: translate(200%, -100%);
+    93% {
+      transform: translate($width * 12, -1000%);
     }
-    50% {
-      transform: translate(-200%, -100%);
+    96% {
+      transform: translate(-100%, -1000%);
     }
-    52% {
-      transform: translate(-200%, 0);
+    99% {
+      transform: translate(-100%, 0);
+    }
+  }
+
+  .hikousen-inner {
+    width: 100%;
+    animation: 5s ease-in 0 floating;
+    animation-iteration-count: infinite;
+    @keyframes floating {
+      0%,
+      100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(15%);
+      }
     }
   }
 }
