@@ -9,10 +9,6 @@
     </div>
 
     <img class="corster" src="../assets/images/azuna_land_corster.png" />
-    <img
-      class="horrorhouse"
-      src="../assets/images/azuna_land_horrorhouse.png"
-    />
 
     <div class="kanransha">
       <div class="kanransha__wheel">
@@ -40,6 +36,26 @@
     </div>
 
     <img class="theater" src="../assets/images/azuna_land_theater.png" />
+
+    <div class="horrorhouse">
+      <img
+        class="horrorhouse__house"
+        src="../assets/images/azuna_land_horrorhouse.png"
+      />
+      <span
+        v-for="(item, i) in [
+          'ヒヒヒ...',
+          'わくわく！',
+          'ダンスもうやめたーい！',
+          'ぐるぐる...',
+          '演技力がすごい!'
+        ]"
+        :key="i"
+        :class="`horrorhouse__voice-${i}`"
+      >
+        {{ item }}
+      </span>
+    </div>
   </div>
 </template>
 
@@ -169,10 +185,145 @@ export default Vue.extend({});
 .horrorhouse {
   position: absolute;
 
-  bottom: 20%;
-  right: 20%;
+  top: 50%;
+  right: 10%;
 
   width: 40%;
+
+  &__house {
+    width: 100%;
+  }
+
+  %voice {
+    font-size: 2vw;
+    position: absolute;
+    white-space: nowrap;
+  }
+
+  &__voice-0 {
+    @extend %voice;
+    left: 10%;
+    top: 30%;
+
+    opacity: 0;
+    animation: 10s linear 0 voice-animation-0;
+    animation-iteration-count: infinite;
+
+    @keyframes voice-animation-0 {
+      0%,
+      100% {
+        opacity: 0;
+        transform: rotate(-10deg) scale(1);
+      }
+      20% {
+        opacity: 1;
+        transform: rotate(-10deg) scale(1.2);
+      }
+      30% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__voice-1 {
+    @extend %voice;
+    left: 80%;
+    top: 70%;
+
+    opacity: 0;
+    animation: 10s linear 3s voice-animation-1;
+    animation-iteration-count: infinite;
+
+    @keyframes voice-animation-1 {
+      0%,
+      100% {
+        opacity: 0;
+        transform: rotate(-20deg) translate(0, 0);
+      }
+      20% {
+        opacity: 1;
+        transform: rotate(-20deg) translate(10%, -50%);
+      }
+      30% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__voice-2 {
+    @extend %voice;
+    left: 50%;
+    top: 60%;
+
+    opacity: 0;
+    animation: 10s linear 7s voice-animation-2;
+    animation-iteration-count: infinite;
+
+    @keyframes voice-animation-2 {
+      0%,
+      100% {
+        opacity: 0;
+        transform: rotate(30deg) skew(0, 0);
+      }
+      20% {
+        opacity: 1;
+        transform: rotate(30deg) skew(20deg, 10deg);
+      }
+      30% {
+        opacity: 0;
+      }
+    }
+  }
+
+  &__voice-3 {
+    @extend %voice;
+    left: 80%;
+    top: 20%;
+
+    opacity: 0;
+    animation: 10s linear 9s voice-animation-3;
+    animation-iteration-count: infinite;
+
+    @keyframes voice-animation-3 {
+      0%,
+      100% {
+        opacity: 0;
+        transform: rotate(40deg);
+      }
+      20% {
+        opacity: 1;
+        transform: rotate(-120deg);
+      }
+      30% {
+        opacity: 0;
+        transform: rotate(-200deg);
+      }
+    }
+  }
+  &__voice-4 {
+    @extend %voice;
+    left: 10%;
+    top: 70%;
+
+    opacity: 0;
+    animation: 10s linear 4s voice-animation-4;
+    animation-iteration-count: infinite;
+
+    @keyframes voice-animation-4 {
+      0%,
+      100% {
+        opacity: 0;
+        transform: rotate(30deg) translate(0, 0);
+      }
+      20% {
+        opacity: 1;
+        transform: rotate(30deg) translate(10%, -50%);
+      }
+      30% {
+        opacity: 0;
+      }
+    }
+  }
 }
 
 .hikousen {
