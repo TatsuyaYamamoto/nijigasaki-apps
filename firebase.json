@@ -26,6 +26,15 @@
         "**/.*",
         "**/node_modules/**"
       ]
+    },
+    {
+      "target": "azuna-land",
+      "public": "packages/azuna-land/dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
     }
   ]
 }
