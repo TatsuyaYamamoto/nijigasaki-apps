@@ -4,6 +4,8 @@
       @click="handleDialog"
       style="position: fixed; z-index: 100;top: 30px; right: 30px"
     />
+
+    <v-map />
     <v-joke-confirm-dialog
       :open="isDialogOpen"
       @handleClose="handleDialog"
@@ -17,6 +19,7 @@ import Vue from "vue";
 import { VBtn, VIcon } from "vuetify/lib";
 
 import VTicketButton from "@/components/VTicketButton.vue";
+import VMap from "@/components/VMap.vue";
 import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
 
 export default Vue.extend({
@@ -24,6 +27,7 @@ export default Vue.extend({
   components: {
     VJokeConfirmDialog,
     VTicketButton,
+    VMap,
     VBtn,
     VIcon
   },
