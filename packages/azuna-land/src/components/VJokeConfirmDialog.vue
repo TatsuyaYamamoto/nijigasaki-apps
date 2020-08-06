@@ -3,17 +3,14 @@
 
 -->
 <template>
-  <v-dialog v-model="dialog" persistent max-width="290">
-    <template v-slot:activator="{ on, attrs }">
-      <slot v-bind:attrs="attrs" v-bind:on="on"></slot>
-    </template>
+  <v-dialog v-model="open" persistent max-width="290">
     <v-card>
       <v-card-title class="headline">
         xx日は優木せつ菜ちゃんのお誕生日でした！
       </v-card-title>
 
       <transition appear>
-        <v-img v-show="dialog" src="../assets/images/dialog_setsuna.png" />
+        <v-img v-show="open" src="../assets/images/dialog_setsuna.png" />
       </transition>
 
       <v-card-text>
@@ -22,7 +19,7 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="dialog = false">
+        <v-btn color="green darken-1" text @click="$emit('handleClose')">
           OK
         </v-btn>
       </v-card-actions>
@@ -30,7 +27,7 @@
   </v-dialog>
 </template>
 
-<script>
+<script lang="ts">
 import Vue from "vue";
 import {
   VDialog,
@@ -54,10 +51,11 @@ export default Vue.extend({
     VCardActions,
     VImg
   },
-  data: function() {
-    return {
-      dialog: false
-    };
+  props: {
+    open: {
+      type: Boolean,
+      required: true
+    }
   }
 });
 </script>

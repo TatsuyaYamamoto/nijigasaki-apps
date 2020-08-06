@@ -1,34 +1,42 @@
 <template>
   <div class="home">
-    <v-joke-confirm-dialog>
-      <template v-slot:default="slotProps">
-        <v-btn
-          color="primary"
-          dark
-          fab
-          v-bind="slotProps.attrs"
-          v-on="slotProps.on"
-        >
-          <v-icon>mdi-menu</v-icon>
-        </v-btn>
-      </template>
-    </v-joke-confirm-dialog>
+    <v-ticket-button
+      @click="handleDialog"
+      style="position: fixed; z-index: 100;top: 30px; right: 30px"
+    />
+    <v-joke-confirm-dialog
+      :open="isDialogOpen"
+      @handleClose="handleDialog"
+    />
   </div>
 </template>
 
-<script>
-import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
+<script lang="ts">
+import Vue from "vue";
+
 import { VBtn, VIcon } from "vuetify/lib";
 
-export default {
+import VTicketButton from "@/components/VTicketButton.vue";
+import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
+
+export default Vue.extend({
   name: "Home",
   components: {
     VJokeConfirmDialog,
+    VTicketButton,
     VBtn,
     VIcon
   },
   data: function() {
-    return {};
+    return {
+      isDialogOpen: false
+    };
+  },
+
+  methods: {
+    handleDialog() {
+      this.isDialogOpen = !this.isDialogOpen;
+    }
   }
-};
+});
 </script>
