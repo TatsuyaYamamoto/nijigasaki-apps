@@ -8,6 +8,10 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
 
     <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
       #loading {
         width: 100%;
         height: 100vh;
@@ -28,14 +32,39 @@
       </strong>
     </noscript>
 
-    <div id="loading">
-      &nbsp;&nbsp;_,,..,,,,_ <br />
-      / ,' 3　 `ヽｰっ すやぁ...<br />
-      l　　 ⊃　⌒_つ<br />
-      `'ｰ---‐'''''"
-    </div>
+    <div id="loading"></div>
 
     <div id="app"></div>
     <!-- built files will be auto injected -->
+
+    <script>
+      function getRandomInt(max) {
+        return Math.floor(Math.random() * Math.floor(max));
+      }
+
+      (() => {
+        // expected output: 0, 1 or 2
+        const randomInt = getRandomInt(2);
+        let imageUrl;
+        switch (randomInt) {
+          case 0:
+            imageUrl = "<%= BASE_URL %>images/load_ayumu.png";
+            break;
+          case 1:
+            imageUrl = "<%= BASE_URL %>images/load_shizuku.png";
+            break;
+          case 2:
+          default:
+            imageUrl = "<%= BASE_URL %>images/load_setsuna.png";
+            break;
+        }
+
+        const loadingImageElement = new Image();
+        loadingImageElement.src = imageUrl;
+        const loadingElement = document.getElementById("loading");
+
+        loadingElement.appendChild(loadingImageElement);
+      })();
+    </script>
   </body>
 </html>
