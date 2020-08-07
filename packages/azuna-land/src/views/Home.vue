@@ -11,6 +11,7 @@
       :open="isDialogOpen"
       @handleClose="handleDialog"
     />
+    <v-links />
   </div>
 </template>
 
@@ -21,6 +22,7 @@ import { VBtn, VIcon } from "vuetify/lib";
 
 import VTicketButton from "@/components/VTicketButton.vue";
 import VMap from "@/components/VMap.vue";
+import VLinks from "@/components/VLink.vue";
 import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
 
 export default Vue.extend({
@@ -29,6 +31,7 @@ export default Vue.extend({
     VJokeConfirmDialog,
     VTicketButton,
     VMap,
+    VLinks,
     VBtn,
     VIcon
   },
