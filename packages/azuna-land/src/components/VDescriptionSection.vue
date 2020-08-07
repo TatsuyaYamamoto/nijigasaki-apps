@@ -125,6 +125,7 @@
     }
     &__right {
       width: 150px;
+      height: calc(150px * (459/485));
     }
   }
 
