@@ -10,10 +10,9 @@
           </div>
         </div>
         <div class="welcome-card__body">
-          <span>
-            A•ZU•NALANDは、スクールアイドルが大好きな皆さんのためのテーマパークです！
-          </span>
-          今、最高にアメージングなテーマパークを、 心ゆくまでお楽しみください♪
+          <span>A•ZU•NAランド</span>
+          は、スクールアイドルが大好きな皆さんのためのテーマパークです！
+          今、最高にアメージングなテーマパークを心ゆくまでお楽しみください♪
         </div>
       </div>
 
@@ -21,21 +20,50 @@
         <h2 class="title-ribbon">Attractions</h2>
         <div>
           <a class="section-box--red" @click="$emit('select-attraction')">
-            <h3>A•ZU•NA コースター</h3>
-            <div>hogehoge</div>
-            <div class="notification-board" />
+            <div class="section-box__left">
+              <h3>A•ZU•NA コースター</h3>
+              <div>
+                <span>A•ZU•NAランド</span>
+                自慢のこのジェットコースターは、スクールアイドル愛で動く乗り物です！
+                さぁ、皆さん！スクールアイドルが大好きっていう気持ちを叫んでください！！
+                走馬灯まで見えるお得なアトラクションです！
+              </div>
+              <div class="notification-board" />
+            </div>
+            <img
+              class="section-box__right"
+              src="../assets/images/attraction_corster_setsuna.png"
+            />
           </a>
           <a class="section-box--blue" @click="$emit('select-attraction')">
-            <div class="notification-board" />
+            <div class="section-box__left">
+              <h3>A•ZU•NA シアター</h3>
+              <div>
+                心を落ち着けたいあなたにおすすめしたい、体験型シアターです。
+                VR装置をかぶり、ミッションクリアを目指します。
+                見るだけじゃない、表現力を磨けるこのアトラクションで、よりスクールアイドルの高みを目指しませんか？
+              </div>
+            </div>
+            <img
+              class="section-box__right"
+              src="../assets/images/attraction_theater_shizuku.png"
+            />
 
-            <h3>A•ZU•NA シアター</h3>
-            <div>hogehoge</div>
+            <div class="notification-board" />
           </a>
           <a class="section-box--pink" @click="$emit('select-attraction')">
             <div class="notification-board" />
-
-            <h3>A•ZU•NA わくわくホラーハウス</h3>
-            <div>hogehoge</div>
+            <div class="section-box__left">
+              <h3>A•ZU•NA わくわくホラーハウス</h3>
+              <div>
+                楽しい！怖い！でも、それ以上に楽しい！アトラクションがこちらです。
+                いつかあの子を誘ったホラーハウスを思い浮かべながら、みんなと遊ぶことが大好きなおばけ達と、ダンスをしましょう！
+              </div>
+            </div>
+            <img
+              class="section-box__right"
+              src="../assets/images/attraction_horrorhouse_ayumu.png"
+            />
           </a>
         </div>
       </div>
@@ -58,7 +86,10 @@
     position: relative;
     padding: 0.2em 0.5em;
     margin: 40px;
-    display: inline-block;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
     width: calc(100% - 40px * 2);
     color: #565656;
     background: $background-color;
@@ -66,23 +97,33 @@
     border: dashed 2px $border-color;
     border-radius: 8px;
   }
-  .section-box--pink {
-    @include section-box-base(
-      $background-color: #ffeaea,
-      $border-color: #ffc3c3
-    );
-  }
-  .section-box--blue {
-    @include section-box-base(
-      $background-color: #cae7f1,
-      $border-color: #add8e6
-    );
-  }
-  .section-box--red {
-    @include section-box-base(
-      $background-color: #ff9b9b,
-      $border-color: #ff0000
-    );
+
+  .section-box {
+    &--pink {
+      @include section-box-base(
+        $background-color: #ffeaea,
+        $border-color: #ffc3c3
+      );
+    }
+    &--blue {
+      @include section-box-base(
+        $background-color: #cae7f1,
+        $border-color: #add8e6
+      );
+    }
+    &--red {
+      @include section-box-base(
+        $background-color: #ff9b9b,
+        $border-color: #ff0000
+      );
+    }
+
+    &__left {
+      width: 300px;
+    }
+    &__right {
+      width: 150px;
+    }
   }
 
   &__about {
