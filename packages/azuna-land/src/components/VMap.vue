@@ -8,7 +8,22 @@
       />
     </div>
 
-    <img class="corster" src="../assets/images/azuna_land_corster.png" />
+    <div class="corster">
+      <img
+        class="corster__line"
+        src="../assets/images/azuna_land_corster.png"
+      />
+      <div class="corster__cars">
+        <img
+          class="corster-car__1"
+          src="../assets/images/azuna_land_corster_torokko_blue.png"
+        />
+        <img
+          class="corster-car__2"
+          src="../assets/images/azuna_land_corster_torokko_pink.png"
+        />
+      </div>
+    </div>
 
     <div class="kanransha">
       <div class="kanransha__wheel">
@@ -180,6 +195,44 @@ export default Vue.extend({});
   left: 50%;
 
   width: 40%;
+
+  &__line {
+    width: 100%;
+  }
+
+  &__cars {
+    position: absolute;
+    width: 15%;
+
+    animation: 20s ease-in-out 0 corster-move-0;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+
+    @keyframes corster-move-0 {
+      0% {
+        top: 20%;
+        left: 51%;
+        transform: rotate(0deg);
+      }
+      50%{
+        transform: rotate(-40deg);
+      }
+      100% {
+        top: 45%;
+        left: 30%;
+        transform: rotate(0deg);
+      }
+    }
+  }
+}
+
+.corster-car {
+  &__1 {
+    width: 50%;
+  }
+  &__2 {
+    width: 50%;
+  }
 }
 
 .horrorhouse {
@@ -329,7 +382,7 @@ export default Vue.extend({});
 .hikousen {
   $width: 30%;
   position: absolute;
-  top: 20%;
+  top: 10%;
   left: 0%;
   width: $width;
   animation: 30s linear 0 move;
