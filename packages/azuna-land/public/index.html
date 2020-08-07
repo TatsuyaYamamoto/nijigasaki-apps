@@ -23,7 +23,18 @@
     <title><%= process.env.VUE_APP_TITLE %></title>
     <meta name="description" content="<%= process.env.VUE_APP_DESCRIPTION %>" />
     <meta name="keywords" content="<%= process.env.VUE_APP_KEYWORDS %>" />
-    <!-- TODO: OGP -->
+
+    <!-- OGP -->
+    <meta property="og:title" content="<%= process.env.VUE_APP_TITLE %>" />
+    <meta property="og:site_name" content="<%= process.env.VUE_APP_TITLE %>" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://azuna-land.web.app/" />
+    <meta property="og:image" content="http://azuna-land.web.app/ogp.jpg" />
+    <meta
+      property="og:description"
+      content="<%= process.env.VUE_APP_DESCRIPTION %>"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
 
     <style>
       body {
