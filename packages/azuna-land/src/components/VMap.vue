@@ -100,7 +100,7 @@ export default Vue.extend({});
 .kanransha {
   position: absolute;
   top: 10%;
-  left: 15%;
+  left: 10%;
   display: inline-block;
   transform: scale(0.7);
 
