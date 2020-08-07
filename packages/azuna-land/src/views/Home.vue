@@ -2,7 +2,8 @@
   <div class="home">
     <v-ticket-button
       @click="handleDialog"
-      style="position: fixed; z-index: 100;top: 30px; right: 30px"
+      v-scroll="handleScroll"
+      class="home__ticket-button"
     />
 
     <v-map />
@@ -40,7 +41,44 @@ export default Vue.extend({
   methods: {
     handleDialog() {
       this.isDialogOpen = !this.isDialogOpen;
+    },
+    handleScroll(evt, el) {
+      if (window.scrollY > 200) {
+        el.classList.add("home__ticket-button--show");
+      } else {
+        el.classList.remove("home__ticket-button--show");
+      }
+      // return window.scrollY > 100;
+    }
+  },
+  directives: {
+    scroll: {
+      inserted: function(el, binding) {
+        let f = function(evt: Event) {
+          if (binding.value(evt, el)) {
+            window.removeEventListener("scroll", f);
+          }
+        };
+        window.addEventListener("scroll", f);
+      }
     }
   }
 });
 </script>
+
+<style scoped lang="scss">
+.home {
+  &__ticket-button {
+    position: fixed;
+    z-index: 100;
+    top: 30px;
+    right: -150px;
+
+    transition: right 1s;
+
+    &--show {
+      right: 30px;
+    }
+  }
+}
+</style>
