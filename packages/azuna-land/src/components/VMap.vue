@@ -1,6 +1,47 @@
 <template>
   <div class="map">
     <v-img src="../assets/images/azuna_land_back.png"></v-img>
+
+    <img
+      v-for="(item, i) in [
+        {
+          top: 50,
+          left: 10,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 50,
+          left: 80,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 85,
+          left: 80,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 90,
+          left: 10,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 40,
+          left: 95,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 85,
+          left: 20,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        }
+      ]"
+      :key="i"
+      :style="
+        `position: absolute; top: ${item.top}%; left: ${item.left}%; width:3%`
+      "
+      :src="item.url"
+    />
+
     <div class="hikousen">
       <img
         class="hikousen-inner"
@@ -255,7 +296,7 @@ export default Vue.extend({});
 }
 
 %coasterVoiceBase {
-  font-family: 'Kosugi Maru', sans-serif;
+  font-family: "Kosugi Maru", sans-serif;
   font-size: 2vw;
   position: absolute;
   white-space: nowrap;
