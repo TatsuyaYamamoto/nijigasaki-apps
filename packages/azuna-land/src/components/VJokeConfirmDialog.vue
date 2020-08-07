@@ -16,11 +16,11 @@
       </transition>
 
       <v-card-text> {{ message }} </v-card-text>
+
       <v-card-actions>
-        <v-spacer></v-spacer>
-        <v-btn color="green darken-1" text @click="$emit('handleClose')">
-          OK
-        </v-btn>
+        <v-sukusuta-button @click.native="$emit('handleClose')">
+          閉じる
+        </v-sukusuta-button>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -35,10 +35,11 @@ import {
   VCard,
   VCardTitle,
   VCardText,
-  VCardActions,
-  VImg
+  VCardActions
 } from "vuetify/lib";
 import moment from "moment-timezone";
+
+import VSukusutaButton from "@/components/VSukusutaButton.vue";
 
 export default Vue.extend({
   components: {
@@ -49,7 +50,7 @@ export default Vue.extend({
     VCardTitle,
     VCardText,
     VCardActions,
-    VImg
+    VSukusutaButton
   },
   props: {
     open: {

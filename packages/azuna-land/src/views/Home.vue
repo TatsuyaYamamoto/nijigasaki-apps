@@ -7,13 +7,10 @@
     />
 
     <v-map />
-    <v-joke-confirm-dialog
-      :open="isDialogOpen"
-      @handleClose="handleDialog"
-    />
     <v-links />
     <v-footer-section />
 
+    <v-joke-confirm-dialog :open="isDialogOpen" @handleClose="handleDialog" />
   </div>
 </template>
 
