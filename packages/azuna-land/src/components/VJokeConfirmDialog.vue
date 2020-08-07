@@ -17,7 +17,11 @@
 
       <v-card-text> {{ message }} </v-card-text>
 
-      <v-card-actions>
+      <v-card-actions class="justify-center">
+        <v-twitter-share-button />
+      </v-card-actions>
+
+      <v-card-actions class="justify-center">
         <v-sukusuta-button @click.native="$emit('handleClose')">
           閉じる
         </v-sukusuta-button>
@@ -40,6 +44,7 @@ import {
 import moment from "moment-timezone";
 
 import VSukusutaButton from "@/components/VSukusutaButton.vue";
+import VTwitterShareButton from "@/components/VTwitterShareButton.vue";
 
 export default Vue.extend({
   components: {
@@ -50,7 +55,8 @@ export default Vue.extend({
     VCardTitle,
     VCardText,
     VCardActions,
-    VSukusutaButton
+    VSukusutaButton,
+    VTwitterShareButton
   },
   props: {
     open: {
