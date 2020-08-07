@@ -7,6 +7,7 @@
     />
 
     <v-map />
+    <v-description-section @select-attraction="handleDialog" />
     <v-links />
     <v-footer-section />
 
@@ -22,6 +23,7 @@ import { VBtn, VIcon } from "vuetify/lib";
 import VTicketButton from "@/components/VTicketButton.vue";
 import VMap from "@/components/VMap.vue";
 import VLinks from "@/components/VLink.vue";
+import VDescriptionSection from "@/components/VDescriptionSection.vue";
 import VFooterSection from "@/components/VFooterSection.vue";
 import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
 
@@ -32,6 +34,7 @@ export default Vue.extend({
     VTicketButton,
     VMap,
     VLinks,
+    VDescriptionSection,
     VFooterSection,
     VBtn,
     VIcon
