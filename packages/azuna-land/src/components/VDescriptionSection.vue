@@ -4,9 +4,10 @@
       <div class="description-section__about welcome-card">
         <div class="welcome-card__ribbon">
           <div class="welcome-card__ribbon-inner">
-            <span class="welcome-card__title">
-              A•ZU•NA ランドへようこそ！
-            </span>
+            <div class="welcome-card__title">
+              <span style="display: inline-block">A•ZU•NAランドへ</span>
+              <span style="display: inline-block">ようこそ！</span>
+            </div>
           </div>
         </div>
         <div class="welcome-card__body">
@@ -80,6 +81,7 @@
     max-width: 900px;
     margin: 0 auto;
     overflow: hidden;
+    padding: 0 10px;
   }
 
   @mixin section-box-base($background-color, $border-color) {
@@ -249,7 +251,6 @@
     line-height: 3em;
     position: relative;
     z-index: 100;
-    height: inherit;
     margin-bottom: 0;
     text-align: center;
     color: #ffffff;
@@ -279,7 +280,7 @@
   }
 
   &__body {
-    margin-top: 50px;
+    margin-top: 70px;
     padding: 50px;
   }
 }
