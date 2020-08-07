@@ -77,7 +77,7 @@ export default Vue.extend({
 .home {
   &__ticket-button {
     position: fixed;
-    z-index: 100;
+    z-index: 2000;
     top: 30px;
     right: -150px;
 
