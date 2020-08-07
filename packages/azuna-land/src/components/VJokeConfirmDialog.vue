@@ -38,7 +38,7 @@ import {
   VCardActions,
   VImg
 } from "vuetify/lib";
-import * as moment from "moment-timezone";
+import moment from "moment-timezone";
 
 export default Vue.extend({
   components: {
