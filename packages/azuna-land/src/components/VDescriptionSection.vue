@@ -15,10 +15,9 @@
         <h2 class="title-ribbon">Attractions</h2>
         <div>
           <a class="section-box--red" @click="$emit('select-attraction')">
-            <div class="notification-board" />
-
             <h3>A•ZU•NA コースター</h3>
             <div>hogehoge</div>
+            <div class="notification-board" />
           </a>
           <a class="section-box--blue" @click="$emit('select-attraction')">
             <div class="notification-board" />
@@ -91,7 +90,7 @@
     position: relative;
     margin: 0 auto;
     padding: 20px 0;
-    width: 600px;
+    max-width: 600px;
     border-radius: 5px;
 
     .title-ribbon {
@@ -137,19 +136,19 @@
 
 .notification-board {
   position: absolute;
-  top: 0px;
-  right: 10px;
+  top: 80%;
+  right: 0px;
 
   width: 100px;
-  height: 100px;
+  height: 70px;
   background-image: url("../assets/images/notification-board.png");
   background-size: contain;
   transform: rotate(10deg);
 
-  &:after {
+  &:before {
     content: "工事中";
     position: absolute;
-    top: 40%;
+    top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
   }
