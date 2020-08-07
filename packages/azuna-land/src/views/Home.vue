@@ -12,6 +12,8 @@
       @handleClose="handleDialog"
     />
     <v-links />
+    <v-footer-section />
+
   </div>
 </template>
 
@@ -23,6 +25,7 @@ import { VBtn, VIcon } from "vuetify/lib";
 import VTicketButton from "@/components/VTicketButton.vue";
 import VMap from "@/components/VMap.vue";
 import VLinks from "@/components/VLink.vue";
+import VFooterSection from "@/components/VFooterSection.vue";
 import VJokeConfirmDialog from "@/components/VJokeConfirmDialog.vue";
 
 export default Vue.extend({
@@ -32,6 +35,7 @@ export default Vue.extend({
     VTicketButton,
     VMap,
     VLinks,
+    VFooterSection,
     VBtn,
     VIcon
   },
