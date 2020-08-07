@@ -24,7 +24,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  background-color: rgb(254, 237, 148);
+  background-color: rgb(254, 203, 78);
   padding: 50px 0;
 }
 

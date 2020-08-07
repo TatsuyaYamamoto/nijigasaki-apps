@@ -38,7 +38,7 @@
 <style scoped lang="scss">
 .footer {
   position: relative;
-  background-color: rgb(254, 237, 148);
+  background-color: rgb(254, 203, 78);
   width: 100%;
   padding: 50px 0;
 
