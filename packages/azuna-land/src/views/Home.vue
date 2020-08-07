@@ -75,6 +75,8 @@ export default Vue.extend({
 
 <style scoped lang="scss">
 .home {
+  font-family: "Kosugi Maru", sans-serif;
+
   &__ticket-button {
     position: fixed;
     z-index: 2000;
