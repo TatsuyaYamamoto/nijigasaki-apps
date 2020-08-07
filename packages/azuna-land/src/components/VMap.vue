@@ -6,17 +6,42 @@
       v-for="(item, i) in [
         {
           top: 50,
-          left: 10,
+          left: 9,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 47,
+          left: 12,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 52,
+          left: 78,
           url: require('../assets/images/azuna_land_ki_1.png')
         },
         {
           top: 50,
-          left: 80,
+          left: 75,
           url: require('../assets/images/azuna_land_ki_2.png')
         },
         {
           top: 85,
-          left: 80,
+          left: 65,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 87,
+          left: 62,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 83,
+          left: 78,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 89,
+          left: 13,
           url: require('../assets/images/azuna_land_ki_1.png')
         },
         {
@@ -32,6 +57,16 @@
         {
           top: 85,
           left: 20,
+          url: require('../assets/images/azuna_land_ki_2.png')
+        },
+        {
+          top: 60,
+          left: 32,
+          url: require('../assets/images/azuna_land_ki_1.png')
+        },
+        {
+          top: 38,
+          left: 3,
           url: require('../assets/images/azuna_land_ki_2.png')
         }
       ]"
