@@ -46,7 +46,7 @@ export default Vue.extend({
     handleDialog() {
       this.isDialogOpen = !this.isDialogOpen;
     },
-    handleScroll(evt, el) {
+    handleScroll(evt: Event, el: Element) {
       if (window.scrollY > 200) {
         el.classList.add("home__ticket-button--show");
       } else {
