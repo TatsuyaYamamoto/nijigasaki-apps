@@ -255,6 +255,7 @@ export default Vue.extend({});
 }
 
 %coasterVoiceBase {
+  font-family: 'Kosugi Maru', sans-serif;
   font-size: 2vw;
   position: absolute;
   white-space: nowrap;
@@ -344,6 +345,7 @@ export default Vue.extend({});
     font-size: 2vw;
     position: absolute;
     white-space: nowrap;
+    font-family: 'Kosugi Maru', sans-serif;
   }
 
   &__voice-0 {
