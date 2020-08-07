@@ -2,7 +2,7 @@
   <footer class="footer">
     <div class="footer__title">
       <div class="footer-title">
-        <span>A•ZU•NA LAND</span>
+        <span>A・ZU・NAランド</span>
       </div>
       <div class="footer-title__address">
         <span>〒135-0064 東京都江東区青海A丁目Z−N</span>

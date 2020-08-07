@@ -5,13 +5,13 @@
         <div class="welcome-card__ribbon">
           <div class="welcome-card__ribbon-inner">
             <div class="welcome-card__title">
-              <span style="display: inline-block">A•ZU•NAランドへ</span>
+              <span style="display: inline-block">A・ZU・NAランドへ</span>
               <span style="display: inline-block">ようこそ！</span>
             </div>
           </div>
         </div>
         <div class="welcome-card__body">
-          <span>A•ZU•NAランド</span>
+          <span>A・ZU・NAランド</span>
           は、スクールアイドルが大好きな皆さんのためのテーマパークです！
           今、最高にアメージングなテーマパークを心ゆくまでお楽しみください♪
         </div>
@@ -22,9 +22,9 @@
         <div>
           <a class="section-box--red" @click="$emit('select-attraction')">
             <div class="section-box__left">
-              <h3>A•ZU•NA コースター</h3>
+              <h3>A・ZU・NAコースター</h3>
               <div>
-                <span>A•ZU•NAランド</span>
+                <span>A・ZU・NAランド</span>
                 自慢のこのジェットコースターは、スクールアイドル愛で動く乗り物です！
                 さぁ、皆さん！スクールアイドルが大好きっていう気持ちを叫んでください！！
                 走馬灯まで見えるお得なアトラクションです！
