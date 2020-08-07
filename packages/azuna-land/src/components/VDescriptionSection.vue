@@ -1,13 +1,19 @@
 <template>
   <section class="description-section">
     <div class="description-section__container">
-      <div class="description-section__about section-box--pink">
-        <h2>A•ZU•NA LANDとは?</h2>
-        <div>
+      <div class="description-section__about welcome-card">
+        <div class="welcome-card__ribbon">
+          <div class="welcome-card__ribbon-inner">
+            <span class="welcome-card__title">
+              A•ZU•NA ランドへようこそ！
+            </span>
+          </div>
+        </div>
+        <div class="welcome-card__body">
           <span>
             A•ZU•NALANDは、スクールアイドルが大好きな皆さんのためのテーマパークです！
           </span>
-          今、最高にアメージングなテーマパーク、 心ゆくまで、お楽しみください。
+          今、最高にアメージングなテーマパークを、 心ゆくまでお楽しみください♪
         </div>
       </div>
 
@@ -84,14 +90,16 @@
   }
 
   &__attractions {
+    max-width: 600px;
+
     background-color: white;
 
     display: block;
     position: relative;
     margin: 0 auto;
     padding: 20px 0;
-    max-width: 600px;
     border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
     .title-ribbon {
       display: inline-block;
@@ -151,6 +159,87 @@
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+}
+
+.welcome-card {
+  max-width: 600px;
+
+  position: relative;
+  background: #ffffff;
+  overflow: visible;
+  margin: 2em auto;
+  padding: 0.5em;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+
+  &__ribbon {
+    position: absolute;
+    z-index: 200;
+    top: 15px;
+    width: calc(100% + 20px);
+    height: 50px;
+    margin-right: -18px;
+    margin-bottom: 80px;
+    margin-left: -18px;
+
+    &:before,
+    &:after {
+      position: absolute;
+      top: 20px;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      content: "";
+      border-width: 20px 20px;
+    }
+    &:before {
+      left: -30px;
+      border-style: solid;
+      border-color: #f06292 #f06292 #f06292 transparent;
+    }
+    &:after {
+      right: -30px;
+      border-style: solid;
+      border-color: #f06292 transparent #f06292 #f06292;
+    }
+  }
+
+  &__ribbon-inner {
+    line-height: 3em;
+    position: relative;
+    z-index: 100;
+    height: inherit;
+    margin-bottom: 0;
+    text-align: center;
+    color: #ffffff;
+    background: #f48fb1;
+
+    &:before,
+    &:after {
+      position: absolute;
+      bottom: -10px;
+      width: 0;
+      height: 0;
+      content: "";
+      border-top: 10px solid #c2185b;
+    }
+    &:before {
+      left: 0;
+      border-left: 10px solid transparent;
+    }
+    &:after {
+      right: 0;
+      border-right: 10px solid transparent;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+  }
+
+  &__body {
+    margin-top: 50px;
+    padding: 50px;
   }
 }
 </style>
