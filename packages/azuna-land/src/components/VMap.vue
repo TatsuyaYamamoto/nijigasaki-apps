@@ -8,20 +8,32 @@
       />
     </div>
 
-    <div class="corster">
+    <div class="coaster">
       <img
-        class="corster__line"
+        class="coaster__line"
         src="../assets/images/azuna_land_corster.png"
       />
-      <div class="corster__cars">
+      <div class="coaster__cars">
         <img
-          class="corster-car__1"
+          class="coaster-car__1"
           src="../assets/images/azuna_land_corster_torokko_blue.png"
         />
         <img
-          class="corster-car__2"
+          class="coaster-car__2"
           src="../assets/images/azuna_land_corster_torokko_pink.png"
         />
+
+        <span
+          v-for="(item, i) in [
+            'あれ？',
+            'やだやだー！',
+            'こんなのトロッコじゃ～ん！'
+          ]"
+          :key="i"
+          :class="`coaster-voice__${i}`"
+        >
+          {{ item }}
+        </span>
       </div>
     </div>
 
@@ -189,7 +201,7 @@ export default Vue.extend({});
   width: 30%;
 }
 
-.corster {
+.coaster {
   position: absolute;
   bottom: 50%;
   left: 50%;
@@ -204,17 +216,20 @@ export default Vue.extend({});
     position: absolute;
     width: 15%;
 
-    animation: 20s ease-in-out 0 corster-move-0;
+    top: 20%;
+    left: 51%;
+
+    animation: 20s ease-in-out 0 coaster-move-0;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 
-    @keyframes corster-move-0 {
+    @keyframes coaster-move-0 {
       0% {
         top: 20%;
         left: 51%;
         transform: rotate(0deg);
       }
-      50%{
+      50% {
         transform: rotate(-40deg);
       }
       100% {
@@ -226,12 +241,90 @@ export default Vue.extend({});
   }
 }
 
-.corster-car {
+.coaster-car {
+  z-index: 1000;
+
   &__1 {
+    vertical-align: top;
     width: 50%;
   }
   &__2 {
+    vertical-align: top;
     width: 50%;
+  }
+}
+
+%coasterVoiceBase {
+  font-size: 2vw;
+  position: absolute;
+  white-space: nowrap;
+
+  top: -80%;
+  left: 5%;
+  transform: translate(-50%, 0);
+
+  background-color: white;
+  border-radius: 5px;
+}
+
+.coaster-voice {
+  &__0 {
+    @extend %coasterVoiceBase;
+
+    opacity: 0;
+    animation: 10s linear 0 coaster-voice-animation-0;
+    animation-iteration-count: infinite;
+
+    @keyframes coaster-voice-animation-0 {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0;
+      }
+    }
+  }
+  &__1 {
+    @extend %coasterVoiceBase;
+    opacity: 0;
+    animation: 10s linear 4s coaster-voice-animation-1;
+    animation-iteration-count: infinite;
+
+    @keyframes coaster-voice-animation-1 {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0;
+      }
+    }
+  }
+  &__2 {
+    @extend %coasterVoiceBase;
+    opacity: 0;
+    animation: 10s linear 7s coaster-voice-animation-2;
+    animation-iteration-count: infinite;
+
+    @keyframes coaster-voice-animation-2 {
+      0%,
+      100% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      20% {
+        opacity: 0;
+      }
+    }
   }
 }
 
