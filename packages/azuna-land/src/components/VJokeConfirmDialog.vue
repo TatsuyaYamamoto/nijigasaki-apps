@@ -5,10 +5,14 @@
 <template>
   <v-dialog v-model="open" persistent max-width="290">
     <v-card>
-      <v-card-title class="headline">{{ title }} </v-card-title>
+      <v-card-title>{{ title }} </v-card-title>
 
       <transition appear>
-        <v-img v-show="open" src="../assets/images/dialog_setsuna.png" />
+        <img
+          v-show="open"
+          class="sorry-image"
+          src="../assets/images/dialog_setsuna.png"
+        />
       </transition>
 
       <v-card-text> {{ message }} </v-card-text>
@@ -62,10 +66,6 @@ export default Vue.extend({
       const birthday = moment(`${thisYear}-08-08`).tz("Asia/Tokyo");
       const diff = birthday.diff(today, "days", true);
 
-      console.log(today.format());
-      console.log(birthday.format());
-      console.log(diff);
-
       if (0 < diff) {
         const day = Math.ceil(diff);
         return `${day}日後は優木せつ菜ちゃんのお誕生日です！`;
@@ -85,6 +85,12 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
+.sorry-image {
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+}
+
 .v-enter-active {
   animation: shake 600ms 0.2s;
   transform-origin: center;
