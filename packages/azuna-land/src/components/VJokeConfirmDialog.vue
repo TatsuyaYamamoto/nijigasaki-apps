@@ -5,18 +5,13 @@
 <template>
   <v-dialog v-model="open" persistent max-width="290">
     <v-card>
-      <v-card-title class="headline">
-        xx日は優木せつ菜ちゃんのお誕生日でした！
-      </v-card-title>
+      <v-card-title class="headline">{{ title }} </v-card-title>
 
       <transition appear>
         <v-img v-show="open" src="../assets/images/dialog_setsuna.png" />
       </transition>
 
-      <v-card-text>
-        このウェブサイトは優木せつ菜ちゃんのお誕生日のお祝いのためにラブライバーが作成したジョークサイトです。
-        ラブライブ公式とは一切関係ありません。
-      </v-card-text>
+      <v-card-text> {{ message }} </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn color="green darken-1" text @click="$emit('handleClose')">
@@ -39,6 +34,7 @@ import {
   VCardActions,
   VImg
 } from "vuetify/lib";
+import * as moment from "moment-timezone";
 
 export default Vue.extend({
   components: {
@@ -55,6 +51,34 @@ export default Vue.extend({
     open: {
       type: Boolean,
       required: true
+    }
+  },
+  computed: {
+    title() {
+      // 初回リリースはせつ菜ちゃんのお誕生日なので、お誕生日メッセージにしている。
+      // 今後このページ、案内を使い回す時は、よしなに
+      const today = moment().tz("Asia/Tokyo");
+      const thisYear = today.year();
+      const birthday = moment(`${thisYear}-08-08`).tz("Asia/Tokyo");
+      const diff = birthday.diff(today, "days", true);
+
+      console.log(today.format());
+      console.log(birthday.format());
+      console.log(diff);
+
+      if (0 < diff) {
+        const day = Math.ceil(diff);
+        return `${day}日後は優木せつ菜ちゃんのお誕生日です！`;
+      }
+      if (diff < -1) {
+        const day = Math.abs(Math.ceil(diff));
+        return `${day}日前は優木せつ菜ちゃんのお誕生日です！`;
+      }
+
+      return `今日は優木せつ菜ちゃんのお誕生日です！`;
+    },
+    message() {
+      return `このウェブサイトは優木せつ菜ちゃんのお誕生日のお祝いのためにラブライバーが作成したジョークサイトです。ラブライブ公式とは一切関係ありません。`;
     }
   }
 });
