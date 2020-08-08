@@ -1,13 +1,21 @@
 <template>
   <div class="home">
     <v-ticket-button
-      @click="handleDialog"
+      @click="
+        handleDialog();
+        sendClickEvent('ticket_button');
+      "
       v-scroll="handleScroll"
       class="home__ticket-button"
     />
 
     <v-map />
-    <v-description-section @select-attraction="handleDialog" />
+    <v-description-section
+      @select-attraction="
+        handleDialog();
+        sendClickEvent($event);
+      "
+    />
     <v-links />
     <v-footer-section />
 
@@ -56,6 +64,15 @@ export default Vue.extend({
         el.classList.remove("home__ticket-button--show");
       }
       // return window.scrollY > 100;
+    },
+    sendClickEvent(source: string) {
+      console.log(source);
+
+      // @ts-ignore
+      gtag("event", "click", {
+        event_category: "open_joke_dialog",
+        event_label: source
+      });
     }
   },
   directives: {

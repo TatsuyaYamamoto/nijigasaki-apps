@@ -2,22 +2,40 @@
   <div class="links">
     <a
       class="list-item nijigasaki"
-      href="http://nijigasaki-school.web.app/"
+      href="http://nijigasaki-school.web.app"
       target="_blank"
+      @click="sendClickEvent('http://nijigasaki-school.web.app')"
     >
       <span class="list-item__icon"></span>
       <span class="list-item__name">虹ヶ咲学園</span>
     </a>
     <a
       class="list-item sokontokoro"
-      href="http://www.sokontokoro-factory.net/"
+      href="http://www.sokontokoro-factory.net"
       target="_blank"
+      @click="sendClickEvent('http://www.sokontokoro-factory.net')"
     >
       <span class="list-item__name">そこんところ工房</span>
       <span class="list-item__icon"></span>
     </a>
   </div>
 </template>
+
+<script lang="ts">
+import Vue from "vue";
+
+export default Vue.extend({
+  methods: {
+    sendClickEvent(url: string) {
+      // @ts-ignore
+      gtag("event", "click", {
+        event_category: "outbound",
+        event_label: url
+      });
+    }
+  }
+});
+</script>
 
 <style scoped lang="scss">
 .links {

@@ -20,7 +20,10 @@
       <div class="description-section__attractions">
         <h2 class="title-ribbon">Attractions</h2>
         <div>
-          <a class="section-box--red" @click="$emit('select-attraction')">
+          <a
+            class="section-box--red"
+            @click="$emit('select-attraction', 'coaster')"
+          >
             <div class="section-box__left">
               <h3>A・ZU・NAコースター</h3>
               <div>
@@ -36,7 +39,10 @@
               src="../assets/images/attraction_corster_setsuna.png"
             />
           </a>
-          <a class="section-box--blue" @click="$emit('select-attraction')">
+          <a
+            class="section-box--blue"
+            @click="$emit('select-attraction', 'theater')"
+          >
             <div class="section-box__left">
               <h3>A・ZU・NA シアター</h3>
               <div>
@@ -52,7 +58,10 @@
 
             <div class="notification-board" />
           </a>
-          <a class="section-box--pink" @click="$emit('select-attraction')">
+          <a
+            class="section-box--pink"
+            @click="$emit('select-attraction', 'horror_house')"
+          >
             <div class="notification-board" />
             <div class="section-box__left">
               <h3>A・ZU・NA わくわくホラーハウス</h3>
