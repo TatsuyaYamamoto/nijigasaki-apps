@@ -171,6 +171,7 @@ export default Vue.extend({});
 <style scoped lang="scss">
 .map {
   position: relative;
+  overflow: hidden;
 }
 
 .kanransha {
