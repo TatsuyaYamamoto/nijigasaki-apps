@@ -1,8 +1,8 @@
 {
   "hosting": [
     {
-      "target": "dev",
-      "public": "dist/nijigasaki_website",
+      "target": "nijigasaki-school-dev",
+      "public": "packages/nijigasaki-school/dist",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -10,8 +10,8 @@
       ]
     },
     {
-      "target": "pro",
-      "public": "dist/nijigasaki_website",
+      "target": "nijigasaki-school-pro",
+      "public": "packages/nijigasaki-school/dist",
       "ignore": [
         "firebase.json",
         "**/.*",
@@ -19,8 +19,17 @@
       ]
     },
     {
-      "target": "calc",
-      "public": "dist/cyazalea_kiss_calc",
+      "target": "cyazalea-kiss-calc",
+      "public": "packages/cyazalea-kiss-calc/dist",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    },
+    {
+      "target": "azuna-land",
+      "public": "packages/azuna-land/dist",
       "ignore": [
         "firebase.json",
         "**/.*",

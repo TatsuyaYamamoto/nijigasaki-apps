@@ -1,0 +1,8 @@
+/**
+ * @link https://opentype.jp/aoyagireisho.htm
+ * $ yarn fontmin -t "虹ヶ咲学園" src/assets/fonts/aoyagireisyosimo_ttf_2_01.ttf > src/assets/fonts/aoyagireisyosimo_ttf_2_01.min.ttf
+ */
+@font-face {
+  font-family: "aoyagireisyosimo";
+  src: url(~@/assets/fonts/aoyagireisyosimo_ttf_2_01.min.ttf);
+}

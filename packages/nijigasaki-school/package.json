@@ -1,0 +1,27 @@
+{
+  "name": "nijigasaki-school",
+  "version": "1.1.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf dist",
+    "start": "parcel index.html --out-dir dist",
+    "replace-dev-meta": "sed -i '' -e 's/<title>虹ヶ咲学園 | Nijigasaki Junior & Senior High School<\\/title>/<meta name=\"robots\" content=\"noindex\"><title>DEVELOPMENT 虹ヶ咲学園<\\/title>/g' ./dist/index.html",
+    "copy-ogp": "cp assets/images/ogp.jpg dist",
+    "build-dev": "yarn clean && parcel build index.html --out-dir dist && yarn copy-ogp && yarn replace-dev-meta",
+    "build-pro": "yarn clean && parcel build index.html --out-dir dist && yarn copy-ogp",
+    "deploy-dev": "firebase deploy --only hosting:dev  --project nijigasaki-school",
+    "deploy-pro": "firebase deploy --only hosting:pro  --project nijigasaki-school"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.7.5",
+    "fontmin": "^0.9.8",
+    "html-to-text": "^5.1.1",
+    "imagemin": "^7.0.1",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "parcel-bundler": "^1.12.4",
+    "postcss-modules": "^1.5.0",
+    "sass": "^1.25.0"
+  }
+}
