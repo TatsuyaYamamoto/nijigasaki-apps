@@ -38,7 +38,7 @@
           </a>
           <a class="section-box--blue" @click="$emit('select-attraction')">
             <div class="section-box__left">
-              <h3>A•ZU•NA シアター</h3>
+              <h3>A・ZU・NA シアター</h3>
               <div>
                 心を落ち着けたいあなたにおすすめしたい、体験型シアターです。
                 VR装置をかぶり、ミッションクリアを目指します。
@@ -55,7 +55,7 @@
           <a class="section-box--pink" @click="$emit('select-attraction')">
             <div class="notification-board" />
             <div class="section-box__left">
-              <h3>A•ZU•NA わくわくホラーハウス</h3>
+              <h3>A・ZU・NA わくわくホラーハウス</h3>
               <div>
                 楽しい！怖い！でも、それ以上に楽しい！アトラクションがこちらです。
                 いつかあの子を誘ったホラーハウスを思い浮かべながら、みんなと遊ぶことが大好きなおばけ達と、ダンスをしましょう！
