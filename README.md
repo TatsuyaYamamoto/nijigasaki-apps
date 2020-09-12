@@ -44,4 +44,8 @@
 	- [ラブライブ！虹ヶ咲学園スクールアイドル同好会](http://www.lovelive-anime.jp/nijigasaki/sp_2ndlive2.php)
 	- [虹ヶ咲学園とは？](https://www.klab.com/jp/press/detail/id=6007)
 
+## Notes
 
+- [nijigasaki-school](./packages/nijigasaki-school/package.json)
+    - [parcelでCannot read property 'length' of undefinedが出たら`.cache`ディレクトリを消す](https://www.terrier.dev/blog/2019/20190516073053-parcel-cannot-read-property-length-of-undefined/)
+    

@@ -10,8 +10,8 @@
     "copy-ogp": "cp assets/images/ogp.jpg dist",
     "build-dev": "yarn clean && parcel build index.html --out-dir dist && yarn copy-ogp && yarn replace-dev-meta",
     "build-pro": "yarn clean && parcel build index.html --out-dir dist && yarn copy-ogp",
-    "deploy-dev": "firebase deploy --only hosting:dev  --project nijigasaki-school",
-    "deploy-pro": "firebase deploy --only hosting:pro  --project nijigasaki-school"
+    "deploy-dev": "firebase deploy --only hosting:nijigasaki-school-dev  --project nijigasaki-school",
+    "deploy-pro": "firebase deploy --only hosting:nijigasaki-school-pro  --project nijigasaki-school"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.5",
