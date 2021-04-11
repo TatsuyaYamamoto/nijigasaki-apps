@@ -12,16 +12,5 @@
   "scripts": {
     "ws:niji": "yarn workspace nijigasaki-school",
     "ws:calc": "yarn workspace cyazalea-kiss-calc"
-  },
-  "devDependencies": {
-    "autoprefixer": "^9.7.5",
-    "fontmin": "^0.9.8",
-    "html-to-text": "^5.1.1",
-    "imagemin": "^7.0.1",
-    "imagemin-mozjpeg": "^8.0.0",
-    "imagemin-pngquant": "^8.0.0",
-    "parcel-bundler": "^1.12.4",
-    "postcss-modules": "^1.5.0",
-    "sass": "^1.25.0"
   }
 }
