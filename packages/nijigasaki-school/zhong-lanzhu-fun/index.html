@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-127664761-7"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+      gtag("config", "UA-127664761-7");
+    </script>
+
+    <title>ショウ・ランジュ ファンサイト</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="../assets/images/favicon.ico" />
+
+    <meta
+      name="description"
+      content="スクールアイドル、ショウ・ランジュちゃんの色んな意味で非公認なファンサイトです！東京・お台場にある虹ヶ咲学園で活躍する彼女の情報をほぼ四月馬鹿の範囲でご覧頂けます。"
+    />
+    <meta
+      name="keywords"
+      content="エイプリルフール,四月馬鹿,ジョークサイト,ラブライブ！,LoveLive！,虹ヶ咲,同好会,スクスタ PDP,お台場"
+    />
+
+    <meta property="og:title" content="ショウ・ランジュ ファンサイト" />
+    <meta property="og:site_name" content="ショウ・ランジュ ファンサイト" />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://nijigasaki-school.web.app/zhong-lanzhu-fun"
+    />
+    <meta
+      property="og:image"
+      content="https://nijigasaki-school.web.app/ogp-zhong-lanzhu-fun.jpg"
+    />
+    <meta
+      property="og:description"
+      content="スクールアイドル、ショウ・ランジュちゃんの色んな意味で非公認なファンサイトです！東京・お台場にある虹ヶ咲学園で活躍する彼女の情報をほぼ四月馬鹿の範囲でご覧頂けます。"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rampart+One&family=RocknRoll+One&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/d84a4a97d8.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link rel="stylesheet" href="./style.scss" />
+    <script src="./index.js"></script>
+  </head>
+  <body class="hide">
+    <div class="container">
+      <button class="menu-button" onclick="handleDialog()">
+        <div class="menu-button__line"></div>
+        <span class="menu-button__label">MENU</span>
+      </button>
+      <div class="hero">
+        <img class="hero__logo" src="./assets/logo.png" />
+        <h1 class="hero__title">ショウ・ランジュ ファンサイト</h1>
+        <img class="hero__image" src="./assets/hero.jpg" />
+      </div>
+      <section class="section">
+        <h2 class="section__heading">What's NEWS</h2>
+        <div class="news-list">
+          <a href="#" class="news-item" onclick="handleDialog()">
+            <div class="news-item__title">ゲリラライブの噂をまとめました！</div>
+            <div class="news-item__description">
+              現時点で把握しているゲリラライブ情報をまとめました。引き続き、情報はコメント欄にて募集中です！
+            </div>
+            <div class="news-item__date">2022/10/04</div>
+          </a>
+          <a href="#" class="news-item" onclick="handleDialog()">
+            <div class="news-item__title">求む！ゲリラライブの情報</div>
+            <div class="news-item__description">
+              ランジュちゃんがゲリラライブを行うとの噂があります！コメントページに情報をお寄せ下さい！
+            </div>
+            <div class="news-item__date">2022/10/03</div>
+          </a>
+          <a href="#" class="news-item" onclick="handleDialog()">
+            <div class="news-item__title">ファンサイト開設！</div>
+            <div class="news-item__description">
+              虹ヶ咲学園のオープンキャンパスで突然のライブを披露した謎のスクールアイドル、ショウ・ランジュちゃんを応援するファンサイトを開設しました！
+            </div>
+            <div class="news-item__date">2022/10/02</div>
+          </a>
+        </div>
+      </section>
+    </div>
+    <nav class="bottom-nav">
+      <a href="#" class="bottom-nav__item" onclick="handleDialog()">
+        Info
+      </a>
+      <a
+        href="#"
+        class="bottom-nav__item bottom-nav__item--active"
+        onclick="handleDialog()"
+        >NEWS</a
+      >
+      <a href="#" class="bottom-nav__item" onclick="handleDialog()">コメント</a>
+    </nav>
+
+    <div class="modal-wrapper" id="modal">
+      <a href="#!" class="modal-overlay" onclick="handleDialog()"></a>
+      <div class="modal-window">
+        <div class="modal-window__label">
+          <span class="nowrap-text">
+            <script>
+              const aprilFool2020 = new Date(2020, 4 - 1, 1, 0, 0, 0);
+              const today = new Date();
+              const diffMs = new Date(
+                today.getTime() - aprilFool2020.getTime()
+              ).getTime();
+              const diffDate = Math.floor(diffMs / (1000 * 60 * 60 * 24)) % 365;
+              if (diffDate === 0) {
+                document.write("今日は");
+              } else {
+                document.write(String(diffDate) + "日前は");
+              }
+            </script>
+          </span>
+          <span class="nowrap-text">
+            <script>
+              if (diffDate === 0) {
+                document.write("エイプリルフールです！");
+              } else {
+                document.write("エイプリルフールでした！");
+              }
+            </script>
+          </span>
+        </div>
+        <div class="modal-window__body">
+          <div>
+            このウェブサイトはエイプリルフールとは全く関係ないタイミングでとあるラブライバーが作成したジョークサイトです。
+          </div>
+          <div>ラブライブ公式とは【一切関係ありません】。</div>
+          <div class="dialog-character" id="dialog-character">
+            <img class="dialog-character__img" src="./assets/dialog_yu.png" />
+          </div>
+          <div class="share-buttons">
+            <a
+              href="https://twitter.com/intent/tweet?url=https://nijigasaki-school.web.app/zhong-lanzhu-fun&text=ショウ・ランジュ ファンサイト&hashtags=lovelive,虹ヶ咲,そこんところ工房"
+              target="_blank"
+              class="twitter-share-button"
+              ><i class="fa fa-twitter fa-lg"></i>ツイート</a
+            >
+          </div>
+        </div>
+        <div class="modal-window__action">
+          <a
+            href="#!"
+            class="modal-window-action-button"
+            onclick="handleDialog()"
+          >
+            とじる
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

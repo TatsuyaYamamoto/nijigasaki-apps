@@ -1,0 +1,178 @@
+@import "../sass/modal";
+@import "../sass/twitter-share-button";
+@import "../sass/dialog-character";
+
+$main-pink: rgb(248, 224, 225);
+$accent-pink: rgb(232, 89, 139);
+
+body {
+  margin: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+.hide {
+  opacity: 0;
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1000ms linear;
+}
+
+body,
+button {
+  font-family: "RocknRoll One", sans-serif;
+}
+
+.container {
+  position: relative;
+  max-width: 500px;
+  margin: 0 auto 150px;
+}
+
+.menu-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+
+  cursor: pointer;
+
+  width: 40px;
+  height: 40px;
+  padding: 6px;
+  display: block;
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  background-color: #ffffff;
+
+  &__line {
+    position: relative;
+    display: block;
+    width: 80%;
+    height: 16px;
+    margin: 0 auto;
+    background-color: $accent-pink;
+
+    &:before,
+    &:after {
+      position: absolute;
+      left: 0;
+      content: "";
+      width: 100%;
+      border-top: 3px solid #ffffff;
+    }
+
+    &:before {
+      top: 3px;
+    }
+    &:after {
+      bottom: 3px;
+    }
+  }
+
+  &__label {
+    font-family: Arial;
+    font-size: 8px;
+    color: $accent-pink;
+    text-align: center;
+  }
+}
+
+.hero {
+  background-color: $main-pink;
+
+  &__logo {
+    display: block;
+    height: 150px;
+    margin: 0 auto;
+    padding: 20px 0;
+  }
+
+  &__title {
+    font-family: "Rampart One", cursive;
+    color: $accent-pink;
+    text-align: center;
+    letter-spacing: -8px;
+    margin: 0;
+    padding-bottom: 10px;
+  }
+
+  &__image {
+    width: 100%;
+    vertical-align: top;
+  }
+}
+
+.news-list {
+  margin: 0 20px;
+  border: 1px solid rgb(183, 183, 183);
+  border-radius: 10px;
+}
+
+.news-item {
+  display: block;
+  padding: 20px;
+  margin: 0 10px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid rgb(183, 183, 183);
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  &__description {
+    font-weight: 300;
+    font-size: 16px;
+  }
+
+  &__date {
+    text-align: right;
+  }
+}
+
+.section {
+  &__heading {
+    text-align: center;
+    color: $accent-pink;
+    letter-spacing: 10px;
+  }
+}
+
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 500px;
+  margin: 0 auto;
+
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+
+  &__item {
+    font-size: 22px;
+    border: none;
+    background-color: $main-pink;
+    color: $accent-pink;
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    padding: 0 10px;
+    height: 60px;
+
+    &--active {
+      background-color: $accent-pink;
+      color: #ffffff;
+      height: 80px;
+    }
+  }
+}

@@ -1,8 +1,6 @@
 .dialog-character {
-
-  img {
-    max-width: 200px;
-    width: 100%;
+  &__img {
+    width: 200px;
   }
 
   &--move {
@@ -27,7 +25,7 @@
       }
 
       80% {
-        transform: rotate(10deg)
+        transform: rotate(10deg);
       }
 
       100% {

@@ -12,5 +12,8 @@
   "scripts": {
     "ws:niji": "yarn workspace nijigasaki-school",
     "ws:calc": "yarn workspace cyazalea-kiss-calc"
+  },
+  "devDependencies": {
+    "firebase-tools": "^9.21.0"
   }
 }
